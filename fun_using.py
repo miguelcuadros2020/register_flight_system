@@ -1,4 +1,6 @@
-def validation_generic(type_var:any, text_person:str = None, conditions:list [any]= [lambda x:True], value_n:any = None)->any:
+from typing import Any
+
+def validation_generic(type_var: Any, text_person: str = None, conditions: list[Any] = [lambda x: True], value_n: Any = None) -> Any:
 
     extin_while:bool = True #flag of the while
     while extin_while:
@@ -19,7 +21,7 @@ def validation_generic(type_var:any, text_person:str = None, conditions:list [an
             if not flag_value:
                 if flag:
                     extin_while = False
-                    result:any = type_var(value_n)
+                    result:Any = type_var(value_n)
                 else:
                     value_n = None
                     raise ValueError
@@ -27,9 +29,9 @@ def validation_generic(type_var:any, text_person:str = None, conditions:list [an
             
             # return or extin for value_n
             if not flag:
-                result:any = False
+                result:Any = False
             else:
-                result:any = True
+                result:Any = True
             
             extin_while = False
                 
